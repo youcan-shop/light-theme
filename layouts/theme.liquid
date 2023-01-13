@@ -1,0 +1,10 @@
+<!doctype html>
+<html>
+  <head>
+    {{ content_for_header }}
+    {{ 'main.css' | asset_url | stylesheet_tag }}
+  </head>
+  <body>
+    {{ content_for_layout }}
+  </body>
+</html>

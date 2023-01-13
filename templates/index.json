@@ -1,0 +1,10 @@
+{
+    "sections": {
+        "welcome": {
+            "type": "hello-world"
+        }
+    },
+    "order": [
+        "welcome"
+    ]
+}
