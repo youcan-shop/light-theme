@@ -1,31 +1,22 @@
-{{ 'single-product.css' | asset_url | stylesheet_tag }}
-
-  <section class='single-product'>
-  <!-- Thumbnail -->
-  <img
-    class="product-thumbnail"
-    src="{{product.thumbnail}}"
-    alt="{{product.name}}">
-
-  <div class="product-details">
-    <!-- Name -->
-    <h1 class="product-name">{{ product.name }}</h1>
-
-    <!-- Price -->
-    <div class="product-price">
-      {{ product.price | money }}
-      <del>{{ product.compare_at_price }}</del>
-    </div>
-
-    <!-- Description -->
-    <div>
-      {{ product.description }}
-    </div>
-
-  </div>
-
-</section>
+{%- render 'single-product-snippet', product: product, blocks: section.blocks -%}
 
 {%- schema -%}
-  {"label": "Single Product"}
+  {
+    "label": "Single Product",
+    "blocks": [
+      {
+        "label": "Title",
+        "limit": 1,
+        "type": "product_title"
+      }, {
+        "label": "Description",
+        "limit": 1,
+        "type": "product_description"
+      }, {
+        "label": "Price",
+        "limit": 1,
+        "type": "product_price"
+      }
+    ]
+  }
 {%- endschema -%}
