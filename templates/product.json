@@ -2,9 +2,12 @@
     "sections": {
         "welcome": {
             "type": "hello-world"
+        },
+        "single-product": {
+            "type": "single-product"
         }
     },
     "order": [
-        "welcome"
+        "single-product"
     ]
 }
