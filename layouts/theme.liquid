@@ -5,8 +5,6 @@
     {{ 'main.css' | asset_url | stylesheet_tag }}
   </head>
   <body>
-    {% dump theme %}
-
     {{ content_for_layout }}
   </body>
 </html>
