@@ -3,6 +3,7 @@
   <head>
     {{ content_for_header }}
     {{ 'main.css' | asset_url | stylesheet_tag }}
+    {{ 'https://unpkg.com/@youcan/js@latest/dist/index.umd.js' | script_tag }}
   </head>
   <body>
     {{ content_for_layout }}
