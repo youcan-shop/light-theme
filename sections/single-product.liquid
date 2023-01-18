@@ -20,3 +20,8 @@
     ]
   }
 {%- endschema -%}
+
+{%- javascript -%}
+  const variantStr = `{{ product.variants | json }}`;
+  const variants = JSON.parse(variantStr.slice(1, -1));
+{%- endjavascript -%}

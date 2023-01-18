@@ -1,0 +1,43 @@
+.express-checkout-form {
+   max-width: 600px;
+   margin: auto;
+   border: 1px solid #e3e3e3;
+   padding: 10px;
+}
+
+.express-checkout-form .express-checkout-fields{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 15px;
+    margin:auto;
+}
+
+.express-checkout-form .express-checkout-fields .field{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.express-checkout-form .express-checkout-fields .field input {
+    padding:15px;
+    margin-top: 5px;
+    border: 1px solid #e3e3e3;
+}
+
+.express-checkout-form button {
+    padding:15px;
+    border-radius: 5px;
+    width:100%;
+    font-size: 20pt;
+    font-weight:bold;
+    border:none;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: #94135b;
+    color:white;
+}
+
+.express-checkout-form button:hover {
+    opacity: 0.9;
+}
