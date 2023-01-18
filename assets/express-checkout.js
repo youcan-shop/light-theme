@@ -1,5 +1,5 @@
-async function placeOrder(e) {
-    e.preventDefault()
+async function placeOrder() {
+    console.log('hfafa')
     const expressCheckoutForm = document.querySelector('#express-checkout-form');
     const fields = Object.fromEntries(new FormData(expressCheckoutForm));
     const productVariantId = variants[0].id;
