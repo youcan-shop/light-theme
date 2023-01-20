@@ -1,0 +1,42 @@
+{% style %}
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 100px;
+  }
+  nav h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  nav h1 a {
+    text-decoration: none;
+    color: var(--yc-primary)
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+  nav ul li:hover {
+    cursor: pointer;
+    color: var(--yc-primary)
+  }
+{% endstyle %}
+
+<nav>
+  <h1>
+    <a href="/">Store Logo</a>
+  </h1>
+
+  <ul>
+    <li>الصفحة الرئيسية</li>
+    <li>اتصل بنا</li>
+  </ul>
+</nav>
+
+{% schema %}
+
+  {"label": "Main NavBar"}
+{% endschema %}
