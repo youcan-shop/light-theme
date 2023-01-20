@@ -1,0 +1,49 @@
+{{ 'featured-products.css' | asset_url | stylesheet_tag }}
+
+<h1>{{ section.settings.section_title }}</h1>
+
+<section class="featured-products">
+  {%- for block in section.blocks -%}
+    {% assign product = block.settings.product %}
+
+    <div class="product-block">
+      <img src="{{product.thumbnail}}" alt="{{product.name}}">
+      <h2>{{ product.name }}</h2>
+      <div>
+        <strong>{{ product.price | money }}</strong>
+        <del>{{ product.compare_at_price | money }}</del>
+      </div>
+      <a href="{{ product.url }}">
+        buy now
+      </a>
+    </div>
+  {% endfor %}
+</section>
+
+
+{% schema %}
+  {
+    "label": "Featured Products",
+    "settings": [
+      {
+        "label": "Section title",
+        "id": "section_title",
+        "type": "text",
+        "default": "Featured products"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product",
+        "label": "Product",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,30 @@
+.featured-products {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.featured-products .product-block { 
+    width: 260px;
+    display:flex;
+    flex-direction:column;
+    gap: 10px;
+    text-align: center;
+}
+
+.featured-products .product-block img {
+    width: 100%;
+    aspect-ratio:1;
+}
+
+.featured-products .product-block a {
+    background: var(--yc-primary);
+    color: var(--yc-white);
+    text-decoration: none;
+    padding: 8px 10px;
+    
+}
+.featured-products .product-block a:hover {
+    opacity:.9;
+}

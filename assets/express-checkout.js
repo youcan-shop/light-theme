@@ -13,4 +13,3 @@ async function placeOrder() {
         alert('error')
     })
 }
-  
