@@ -1,0 +1,31 @@
+{{ 'single-product.css' | asset_url | stylesheet_tag }}
+
+  <section class='single-product'>
+  <!-- Thumbnail -->
+  <img
+    class="product-thumbnail"
+    src="{{product.thumbnail}}"
+    alt="{{product.name}}">
+
+  <div class="product-details">
+    <!-- Name -->
+    <h1 class="product-name">{{ product.name }}</h1>
+
+    <!-- Price -->
+    <div class="product-price">
+      {{ product.price | money }}
+      <del>{{ product.compare_at_price }}</del>
+    </div>
+
+    <!-- Description -->
+    <div>
+      {{ product.description }}
+    </div>
+
+  </div>
+
+</section>
+
+{%- schema -%}
+  {"label": "Single Product"}
+{%- endschema -%}

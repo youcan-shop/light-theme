@@ -15,6 +15,7 @@
 }
 
 body {
+  direction: rtl;
   min-height: 100vh;
   color: var(--yc-neutral);
   background: var(--yc-white);
