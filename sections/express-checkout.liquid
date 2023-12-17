@@ -1,0 +1,31 @@
+{{ 'express-checkout.css' | asset_url | stylesheet_tag }}
+
+<form id='express-checkout-form' class="express-checkout-form"  onsubmit="return false;">
+  <div class='express-checkout-fields'>
+    {%- for field in checkout.fields %}
+      <div class='field'>
+        <label for='f-{{ field.name }}'>{{ field.display_name }}</label>
+        <input
+          type='{{ field.type }}'
+          id='f-{{ field.name }}'
+          name='{{ field.name }}'
+          placeholder='{{ field.placeholder }}'
+          {% if field.required %}
+          required
+          {% endif %}>
+      </div>
+    {%- endfor %}
+  </div>
+  <button
+    class='yc-btn w-full express-checkout-button mt-8'
+    onclick='placeOrder()'>
+    <span>buy now</span>
+  </button>
+</form>
+
+{{ 'express-checkout.js' | asset_url | script_tag_deferred }}
+
+{% schema %}
+  {"label": "Express checkout"}
+{% endschema %}
+

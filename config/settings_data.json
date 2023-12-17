@@ -1,8 +1,15 @@
 {
     "current":{
-
+        "sections": {
+            "main-navbar": {
+                "type": "main-navbar"
+            },
+            "main-footer":{
+                "type": "main-footer"
+            }
+        }
     },
-    "presets": {
-        "Default": {}
+    "presets":{
+        "Default":{}
     }
 }

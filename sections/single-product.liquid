@@ -1,0 +1,27 @@
+{%- render 'single-product-snippet', product: product, blocks: section.blocks -%}
+
+{%- schema -%}
+  {
+    "label": "Single Product",
+    "blocks": [
+      {
+        "label": "Title",
+        "limit": 1,
+        "type": "product_title"
+      }, {
+        "label": "Description",
+        "limit": 1,
+        "type": "product_description"
+      }, {
+        "label": "Price",
+        "limit": 1,
+        "type": "product_price"
+      }
+    ]
+  }
+{%- endschema -%}
+
+{%- javascript -%}
+  const variantStr = `{{ product.variants | json }}`;
+  const variants = JSON.parse(variantStr.slice(1, -1));
+{%- endjavascript -%}

@@ -1,10 +1,10 @@
 {
     "sections": {
-        "welcome": {
-            "type": "hello-world"
+        "featured-products": {
+            "type": "featured-products"
         }
     },
     "order": [
-        "welcome"
+        "featured-products"
     ]
 }

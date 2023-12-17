@@ -1,0 +1,37 @@
+{{ 'single-product.css' | asset_url | stylesheet_tag }}
+
+  <section class='single-product'>
+  <!-- Thumbnail -->
+  <img
+    class="product-thumbnail"
+    src="{{product.thumbnail}}"
+    alt="{{product.name}}">
+
+  <div class="product-details">
+    {%- for block in blocks -%}
+      <div {{ block.youcan_attributes }}>
+        {%- case block.type -%}
+          {%- when 'product_title' -%}
+          <!-- Name -->
+          <h1 class="product-name">{{ product.name }}</h1>
+
+          {%- when 'product_price' -%}
+          <!-- Price -->
+          <div class="product-price">
+            {{ product.price | money }}
+            <del>{{ product.compare_at_price }}</del>
+          </div>
+
+          {%- when 'product_description' -%}
+          <!-- Description -->
+          <div>
+            {{ product.description }}
+          </div>
+        {% endcase %}
+      </div>
+
+    {% endfor %}
+
+  </div>
+
+</section>
