@@ -306,6 +306,8 @@
       {{ content_for_layout }}
     </main>
 
+    {%- section 'footer' -%}
+
     <script>
       window.shopUrl = '{{ store.domain }}';
       window.routes = {
