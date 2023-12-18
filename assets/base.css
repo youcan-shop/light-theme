@@ -715,14 +715,14 @@ summary::-webkit-details-marker {
 
 /* Fallback - for browsers that don't support :focus-visible, a fallback is set for :focus */
 .focused,
-.no-js *:focus {
+html.no-js *:focus {
   outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
   outline-offset: 0.3rem;
   box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
 }
 
 /* Negate the fallback side-effect for browsers that support :focus-visible */
-.no-js *:focus:not(:focus-visible) {
+html.no-js *:focus:not(:focus-visible) {
   outline: 0;
   box-shadow: none;
 }
@@ -738,13 +738,13 @@ summary::-webkit-details-marker {
 }
 
 .focused.focus-inset,
-.no-js .focus-inset:focus {
+html.no-js .focus-inset:focus {
   outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
   outline-offset: -0.2rem;
   box-shadow: 0 0 0.2rem 0 rgba(var(--color-foreground), 0.3);
 }
 
-.no-js .focus-inset:focus:not(:focus-visible) {
+html.no-js .focus-inset:focus:not(:focus-visible) {
   outline: 0;
   box-shadow: none;
 }
@@ -766,13 +766,13 @@ summary::-webkit-details-marker {
 }
 
 .focus-offset.focused,
-.no-js .focus-offset:focus {
+html.no-js .focus-offset:focus {
   outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
   outline-offset: 1rem;
   box-shadow: 0 0 0 1rem rgb(var(--color-background)), 0 0 0.2rem 1.2rem rgba(var(--color-foreground), 0.3);
 }
 
-.no-js .focus-offset:focus:not(:focus-visible) {
+html.no-js .focus-offset:focus:not(:focus-visible) {
   outline: 0;
   box-shadow: none;
 }
@@ -2037,7 +2037,7 @@ product-info .loading__spinner:not(.hidden) ~ *,
   list-style-type: none;
 }
 
-.no-js details[open] .modal__toggle {
+html.no-js details[open] .modal__toggle {
   position: absolute;
   z-index: 5;
 }
@@ -2046,7 +2046,7 @@ product-info .loading__spinner:not(.hidden) ~ *,
   display: none;
 }
 
-.no-js details[open] svg.modal__toggle-close {
+html.no-js details[open] svg.modal__toggle-close {
   display: flex;
   z-index: 1;
   height: 1.7rem;
@@ -2057,11 +2057,11 @@ product-info .loading__spinner:not(.hidden) ~ *,
   display: flex;
 }
 
-.no-js details[open] .modal__toggle-open {
+html.no-js details[open] .modal__toggle-open {
   display: none;
 }
 
-.no-js .modal__close-button.link {
+html.no-js .modal__close-button.link {
   display: none;
 }
 
@@ -2638,7 +2638,7 @@ menu-drawer + .header__search {
   }
 }
 
-.no-js .predictive-search {
+html.no-js .predictive-search {
   display: none;
 }
 
@@ -2661,7 +2661,7 @@ details[open] .modal-overlay::after {
   height: 100vh;
 }
 
-.no-js details[open] > .header__icon--search {
+html.no-js details[open] > .header__icon--search {
   top: 1rem;
   right: 0.5rem;
 }
@@ -2738,17 +2738,17 @@ details[open] > .header__icon--menu .icon-hamburger {
   transform: scale(0.8);
 }
 
-.js details[open]:not(.menu-opening) > .header__icon--menu .icon-close {
+html.js details[open]:not(.menu-opening) > .header__icon--menu .icon-close {
   visibility: hidden;
 }
 
-.js details[open]:not(.menu-opening) > .header__icon--menu .icon-hamburger {
+html.js details[open]:not(.menu-opening) > .header__icon--menu .icon-hamburger {
   visibility: visible;
   opacity: 1;
   transform: scale(1.07);
 }
 
-.js details > .header__submenu {
+html.js details > .header__submenu {
   opacity: 0;
   transform: translateY(-1.5rem);
 }

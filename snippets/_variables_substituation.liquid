@@ -1,0 +1,4 @@
+{%- assign _absolute_store_domain = store.domain | prepend: 'https://'  -%}
+{%- assign _all_products_collection_url = _absolute_store_domain | append: '/search?collection=&limit=12&q='  -%}
+{%- assign _base_product_url = _absolute_store_domain |  append: '/products/'  -%}
+{%- assign _base_collection_url = _absolute_store_domain |  append: '/collections/'  -%}

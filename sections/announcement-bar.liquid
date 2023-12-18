@@ -18,7 +18,7 @@
 
 <div
   class="utility-bar color-background-1 gradient{% if section.settings.show_line_separator and section.blocks.size > 0 %} utility-bar--bottom-border{% elsif section.settings.show_line_separator and section.settings.show_social and social_icons%} utility-bar--bottom-border-social-only{% endif %}{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header-localization{% endif %}"
-  {{ block.shopify_attributes }}
+  {{ block.youcan_attributes }}
 >
   <div class="page-width utility-bar__grid{% if announcement_bar and language_country_selector or section.settings.show_social and social_icons %} utility-bar__grid--3-col{% elsif language_country_selector or section.settings.show_social and social_icons %} utility-bar__grid--2-col{% endif %}">
     {%- if section.settings.show_social and social_icons -%}
@@ -29,7 +29,7 @@
         class="announcement-bar{% if section.settings.show_social %} announcement-bar--one-announcement{% endif %}"
         role="region"
         aria-label="{{ 'sections.header.announcement' | t }}"
-        {{ block.shopify_attributes }}
+        {{ block.youcan_attributes }}
       >
         {%- if section.blocks[0].settings.text != blank -%}
           {%- if section.blocks[0].settings.link != blank -%}
@@ -78,7 +78,7 @@
               <div
                 class="slideshow__slide slider__slide grid__item grid--1-col"
                 id="Slide-{{ section.id }}-{{ forloop.index }}"
-                {{ block.shopify_attributes }}
+                {{ block.youcan_attributes }}
                 role="group"
                 aria-roledescription="{{ 'sections.announcements.announcement' | t }}"
                 aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
@@ -88,7 +88,7 @@
                   class="announcement-bar__announcement"
                   role="region"
                   aria-label="{{ 'sections.header.announcement' | t }}"
-                  {{ block.shopify_attributes }}
+                  {{ block.youcan_attributes }}
                 >
                   {%- if block.settings.text != blank -%}
                     {%- if block.settings.link != blank -%}

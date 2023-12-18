@@ -24,7 +24,7 @@ slider-component.slider-component-full-width {
 }
 
 @media screen and (max-width: 989px) {
-  .no-js slider-component .slider {
+  html.no-js slider-component .slider {
     padding-bottom: 3rem;
   }
 }
@@ -236,12 +236,12 @@ slider-component.slider-component-full-width {
   display: none;
 }
 
-.no-js .slider {
+html.no-js .slider {
   -ms-overflow-style: auto;
   scrollbar-width: auto;
 }
 
-.no-js .slider::-webkit-scrollbar {
+html.no-js .slider::-webkit-scrollbar {
   display: initial;
 }
 
