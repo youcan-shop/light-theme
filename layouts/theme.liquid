@@ -26,6 +26,7 @@
     {%- endif -%}
 
     {% style %}
+      :root,
       .color-background-1 {
           --color-background: 255,255,255;
           --gradient-background: #ffffff;
@@ -41,6 +42,81 @@
           --color-badge-background: 255,255,255;
           --color-badge-border: 18,18,18;
           --payment-terms-background-color: rgb(255 255 255);
+      }
+
+      .color-background-2 {
+        --color-background: 243,243,243;
+        --gradient-background: #f3f3f3;
+        --color-foreground: 18,18,18;
+        --color-background-contrast: 179,179,179;
+        --color-shadow: 18,18,18;
+        --color-button: 18,18,18;
+        --color-button-text: 243,243,243;
+        --color-secondary-button: 243,243,243;
+        --color-secondary-button-text: 18,18,18;
+        --color-link: 18,18,18;
+        --color-badge-foreground: 18,18,18;
+        --color-badge-background: 243,243,243;
+        --color-badge-border: 18,18,18;
+        --payment-terms-background-color: rgb(243 243 243);
+      }
+
+      .color-inverse {
+        --color-background: 36,40,51;
+        --gradient-background: #242833;
+        --color-foreground: 255,255,255;
+        --color-background-contrast: 47,52,66;
+        --color-shadow: 18,18,18;
+        --color-button: 255,255,255;
+        --color-button-text: 0,0,0;
+        --color-secondary-button: 36,40,51;
+        --color-secondary-button-text: 255,255,255;
+        --color-link: 255,255,255;
+        --color-badge-foreground: 255,255,255;
+        --color-badge-background: 36,40,51;
+        --color-badge-border: 255,255,255;
+        --payment-terms-background-color: rgb(36 40 51);
+      }
+
+      .color-accent-1 {
+        --color-background: 18,18,18;
+        --gradient-background: #121212;
+        --color-foreground: 255,255,255;
+        --color-background-contrast: 146,146,146;
+        --color-shadow: 18,18,18;
+        --color-button: 255,255,255;
+        --color-button-text: 18,18,18;
+        --color-secondary-button: 18,18,18;
+        --color-secondary-button-text: 255,255,255;
+        --color-link: 255,255,255;
+        --color-badge-foreground: 255,255,255;
+        --color-badge-background: 18,18,18;
+        --color-badge-border: 255,255,255;
+        --payment-terms-background-color: rgb(18 18 18);
+      }
+      
+        
+      .color-accent-2 {
+        --color-background: 51,79,180;
+        --gradient-background: #334fb4;
+        --color-foreground: 255,255,255;
+        --color-background-contrast: 23,35,81;
+        --color-shadow: 18,18,18;
+        --color-button: 255,255,255;
+        --color-button-text: 51,79,180;
+        --color-secondary-button: 51,79,180;
+        --color-secondary-button-text: 255,255,255;
+        --color-link: 255,255,255;
+        --color-badge-foreground: 255,255,255;
+        --color-badge-background: 51,79,180;
+        --color-badge-border: 255,255,255;
+        --payment-terms-background-color: rgb(51 79 180);
+      }
+      
+
+      body, .color-background-1, .color-background-2, .color-inverse, .color-accent-1, .color-accent-2 {
+        color: rgba(var(--color-foreground), 0.75);
+        background-color: rgb(var(--color-background));
       }
 
       :root {

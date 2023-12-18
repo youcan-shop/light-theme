@@ -2331,20 +2331,20 @@ html.no-js .modal__close-button.link {
 }
 
 /* section-header */
-.section-header.shopify-section-group-header-group {
+.section-header.youcan-section-group-header-group {
   z-index: 3;
 }
 
-.shopify-section-header-sticky {
+.youcan-section-header-sticky {
   position: sticky;
   top: 0;
 }
 
-.shopify-section-header-hidden {
+.youcan-section-header-hidden {
   top: calc(-1 * var(--header-height));
 }
 
-.shopify-section-header-hidden.menu-open {
+.youcan-section-header-hidden.menu-open {
   top: 0;
 }
 
@@ -2352,11 +2352,11 @@ html.no-js .modal__close-button.link {
   transition: top 0.15s ease-out;
 }
 
-.shopify-section-group-header-group {
+.youcan-section-group-header-group {
   z-index: 4;
 }
 
-.section-header ~ .shopify-section-group-header-group {
+.section-header ~ .youcan-section-group-header-group {
   z-index: initial;
 }
 

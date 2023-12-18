@@ -42,7 +42,10 @@
           "padding_bottom": 20
         }
       }
-    }
+    },
+    "logo": "Persona_5_logo-2ZfjGHqFpl4IvRsRPAmpYRZCVBZ.png",
+    "favicon": "Persona_5_logo-2ZfjGHqFpl4IvRsRPAmpYRZCVBZ.png",
+    "logo_width": 90
   },
   "presets": {
     "Default": {}

@@ -206,15 +206,16 @@
                 {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
                 {% capture sizes %}(min-width: 750px) {{ settings.logo_width }}px, 50vw{% endcapture %}
                 {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
-                {{ settings.logo.src | image_tag:
-                  class: 'header__heading-logo',
-                  widths: widths,
-                  height: logo_height,
-                  width: settings.logo_width,
-                  alt: logo_alt,
-                  sizes: sizes,
-                  preload: true
-                }}
+                <img 
+                  src="{{- settings.logo.src -}}" 
+                  alt="{{- logo_alt -}}" 
+                  class="header__heading-logo" 
+                  widths="{{- widths -}}" 
+                  height="{{- logo_height -}}" 
+                  width="{{- settings.logo_width -}}" 
+                  sizes="{{- sizes -}}" 
+                  preload="true"
+                />
               </div>
             {%- else -%}
               <span class="h2">{{ store.name }}</span>
@@ -272,7 +273,7 @@
       window.matchMedia('(max-width: 990px)').addEventListener('change', this.setHeaderHeight.bind(this));
 
       if (this.headerIsAlwaysSticky) {
-        this.header.classList.add('shopify-section-header-sticky');
+        this.header.classList.add('youcan-section-header-sticky');
       };
 
       this.currentScrollTop = 0;
@@ -338,20 +339,20 @@
 
     hide() {
       if (this.headerIsAlwaysSticky) return;
-      this.header.classList.add('shopify-section-header-hidden', 'shopify-section-header-sticky');
+      this.header.classList.add('youcan-section-header-hidden', 'youcan-section-header-sticky');
       this.closeMenuDisclosure();
       this.closeSearchModal();
     }
 
     reveal() {
       if (this.headerIsAlwaysSticky) return;
-      this.header.classList.add('shopify-section-header-sticky', 'animate');
-      this.header.classList.remove('shopify-section-header-hidden');
+      this.header.classList.add('youcan-section-header-sticky', 'animate');
+      this.header.classList.remove('youcan-section-header-hidden');
     }
 
     reset() {
       if (this.headerIsAlwaysSticky) return;
-      this.header.classList.remove('shopify-section-header-hidden', 'shopify-section-header-sticky', 'animate');
+      this.header.classList.remove('youcan-section-header-hidden', 'youcan-section-header-sticky', 'animate');
     }
 
     closeMenuDisclosure() {
@@ -401,7 +402,8 @@
 {% schema %}
 {
   "label": "t:sections.header.name",
-  "class": "section-header",
+  "class": "youcan-section-group-header-group section-header",
+  "tag": "div",
   "max_blocks": 3,
   "settings": [
     {
