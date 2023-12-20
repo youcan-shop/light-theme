@@ -45,9 +45,9 @@
   {%- assign show_desktop_slider = true -%}
 {%- endif -%}
 
+{% assign products_to_show = section.settings.products_to_show %}
 {%- if section.settings.collection -%}
-  {%- paginate collection.products by section.settings.products_to_show featured_collection_1, category_id: section.settings.collection.id %}
-    {% comment %} We do this to expose items globally outside of the paginate tag scope {% endcomment %}
+  {%- paginate collection.products by products_to_show featured_collection_1, category_id: section.settings.collection.id %}
     {% assign items = items %}
   {%- endpaginate -%}
 {%- endif -%}
@@ -112,7 +112,7 @@
                   style="--animation-order: {{ forloop.index }};"
                 {% endif %}
               >
-                {%- assign placeholder_image = 'product-apparel-' | append: forloop.rindex -%}
+                {%- assign placeholder_image = 'product-apparel-' | append: forloop.index -%}
                 {% render 'card-product',
                   show_vendor: section.settings.show_vendor,
                   placeholder_image: placeholder_image

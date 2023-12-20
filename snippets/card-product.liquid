@@ -27,14 +27,13 @@
   {%- assign ratio = 1 -%}
   {%- if card_product.thumbnail and media_aspect_ratio == 'portrait' -%}
     {%- assign ratio = 0.8 -%}
-  {%- else -%}
-    {%- if card_product.thumbnail and media_aspect_ratio == 'adapt' -%}
-      {%- assign ratio = 1 -%}
-    {%- else -%}
+  {%- elsif card_product.thumbnail and media_aspect_ratio == 'adapt' -%}
+    {%- assign ratio = 1 -%}
   {%- endif -%}
+  
   {%- if ratio == 0 or ratio == null -%}
     {%- assign ratio = 1 -%}
-  {%- else -%}
+  {%- endif -%}
 
   <div class="card-wrapper product-card-wrapper underline-links-hover">
     <div
@@ -144,10 +143,8 @@
               {%- assign decimal = card_product.averageRating | modulo: 1 -%}
               {%- if decimal >= 0.3 and decimal <= 0.7 -%}
                 {%- assign rating_decimal = 0.5 -%}
-              {%- else -%}
-                {%- if decimal > 0.7 -%}
-                  {%- assign rating_decimal = 1 -%}
-                {%- else -%}
+              {%- elsif decimal > 0.7 -%}
+                {%- assign rating_decimal = 1 -%}
               {%- endif -%}
 
               <div
