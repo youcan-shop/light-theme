@@ -45,7 +45,13 @@
   {%- assign show_desktop_slider = true -%}
 {%- endif -%}
 
-{%- paginate collection.products by section.settings.products_to_show featured_collection_1, category_id: section.settings.collection.id %}
+{%- if section.settings.collection -%}
+  {%- paginate collection.products by section.settings.products_to_show featured_collection_1, category_id: section.settings.collection.id %}
+    {% comment %} We do this to expose items globally outside of the paginate tag scope {% endcomment %}
+    {% assign items = items %}
+  {%- endpaginate -%}
+{%- endif -%}
+
 <div class="color-background-1 isolate gradient">
   <div class="collection section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}">
     <div class="collection__title title-wrapper title-wrapper--no-top-margin page-width{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}">
@@ -75,7 +81,7 @@
         role="list"
         aria-label="{{ 'general.slider.name' | t }}"
       >
-          {%- if items.size > 0 -%}
+          {%- if items and items.size > 0 -%}
             {%- for product in items -%}
               <li
                 id="Slide-{{ section.id }}-{{ forloop.index }}"
@@ -156,12 +162,12 @@
         </a>
       </div>
     {%- endif -%}
+
     {% if section.settings.image_shape == 'arch' %}
       {% render 'mask-arch' %}
     {%- endif -%}
   </div>
 </div>
-{%- endpaginate %}
 
 {% schema %}
 {
