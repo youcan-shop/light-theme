@@ -45,6 +45,7 @@
   {%- assign show_desktop_slider = true -%}
 {%- endif -%}
 
+{%- paginate collection.products by section.settings.products_to_show featured_collection_1, category_id: section.settings.collection.id %}
 <div class="color-background-1 isolate gradient">
   <div class="collection section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}">
     <div class="collection__title title-wrapper title-wrapper--no-top-margin page-width{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}">
@@ -74,50 +75,45 @@
         role="list"
         aria-label="{{ 'general.slider.name' | t }}"
       >
-        {%- paginate collection.products by section.settings.products_to_show section.id, category_id: section.settings.collection.id %}
-          {%- for product in items -%}
-          <div {{ block.youcan_attributes }} class="product-item-{{ id }}">
-            {%- render 'product-preview', item: item -%}
-          </div>
-          {%- endfor -%}
-        {%- endpaginate %}
-        {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
-          <li
-            id="Slide-{{ section.id }}-{{ forloop.index }}"
-            class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-            {% if settings.animations_reveal_on_scroll %}
-              data-cascade
-              style="--animation-order: {{ forloop.index }};"
-            {% endif %}
-          >
-            {% render 'card-product',
-              card_product: product,
-              media_aspect_ratio: section.settings.image_ratio,
-              image_shape: section.settings.image_shape,
-              show_secondary_image: section.settings.show_secondary_image,
-              show_vendor: section.settings.show_vendor,
-              show_rating: section.settings.show_rating,
-              show_quick_add: section.settings.enable_quick_add,
-              section_id: section.id
-            %}
-          </li>
-        {%- else -%}
-          {%- for i in (1..4) -%}
-            <li
-              class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-              {% if settings.animations_reveal_on_scroll %}
-                data-cascade
-                style="--animation-order: {{ forloop.index }};"
-              {% endif %}
-            >
-              {%- assign placeholder_image = 'product-apparel-' | append: forloop.rindex -%}
-              {% render 'card-product',
-                show_vendor: section.settings.show_vendor,
-                placeholder_image: placeholder_image
-              %}
-            </li>
-          {%- endfor -%}
-        {%- endfor -%}
+          {%- if items.size > 0 -%}
+            {%- for product in items -%}
+              <li
+                id="Slide-{{ section.id }}-{{ forloop.index }}"
+                class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                {% if settings.animations_reveal_on_scroll %}
+                  data-cascade
+                  style="--animation-order: {{ forloop.index }};"
+                {% endif %}
+              >
+                {% render 'card-product',
+                  card_product: product,
+                  media_aspect_ratio: section.settings.image_ratio,
+                  image_shape: section.settings.image_shape,
+                  show_secondary_image: section.settings.show_secondary_image,
+                  show_vendor: section.settings.show_vendor,
+                  show_rating: section.settings.show_rating,
+                  show_quick_add: section.settings.enable_quick_add,
+                  section_id: section.id
+                %}
+              </li>
+            {%- endfor -%}
+          {%- else -%}
+            {%- for i in (1..4) -%}
+              <li
+                class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                {% if settings.animations_reveal_on_scroll %}
+                  data-cascade
+                  style="--animation-order: {{ forloop.index }};"
+                {% endif %}
+              >
+                {%- assign placeholder_image = 'product-apparel-' | append: forloop.rindex -%}
+                {% render 'card-product',
+                  show_vendor: section.settings.show_vendor,
+                  placeholder_image: placeholder_image
+                %}
+              </li>
+            {%- endfor -%}
+          {% endif %}
       </ul>
       {%- if show_mobile_slider or show_desktop_slider -%}
         <div class="slider-buttons no-js-hidden">
@@ -165,18 +161,16 @@
     {%- endif -%}
   </div>
 </div>
+{%- endpaginate %}
 
 {% schema %}
 {
-  "name": "t:sections.featured-collection.name",
+  "label": "t:sections.featured-collection.name",
   "tag": "section",
   "class": "section",
-  "disabled_on": {
-    "groups": ["header", "footer"]
-  },
   "settings": [
     {
-      "type": "inline_richtext",
+      "type": "richtext",
       "id": "title",
       "default": "Featured collection",
       "label": "t:sections.featured-collection.settings.title.label"
@@ -233,7 +227,7 @@
       "default": "body"
     },
     {
-      "type": "collection",
+      "type": "category",
       "id": "collection",
       "label": "t:sections.featured-collection.settings.collection.label"
     },
@@ -292,13 +286,6 @@
       "id": "enable_desktop_slider",
       "label": "t:sections.featured-collection.settings.enable_desktop_slider.label",
       "default": false
-    },
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "t:sections.all.colors.label",
-      "info": "t:sections.all.colors.has_cards_info",
-      "default": "scheme-1"
     },
     {
       "type": "header",
@@ -439,11 +426,6 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
-    }
-  ],
-  "presets": [
-    {
-      "name": "t:sections.featured-collection.presets.name"
     }
   ]
 }
