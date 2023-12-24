@@ -107,7 +107,6 @@
 
                   <tbody role="rowgroup">
                     {%- for item in cart.items -%}
-                      {%- assign cart_item_url = _base_product_url | append: item.slug -%}
                       {%- assign cart_item_first_variant = item.variations | first -%}
                       {%- assign cart_item_variants_count = item.variations | size -%}
 
@@ -115,7 +114,7 @@
                         <td class="cart-item__media" role="cell" headers="CartDrawer-ColumnProductImage">
                           {% if item.image %}
                             
-                            <a href="{{ cart_item_url }}" class="cart-item__link" tabindex="-1" aria-hidden="true"> </a>
+                            <a class="cart-item__link" tabindex="-1" aria-hidden="true"> </a>
                             <img
                               class="cart-item__image"
                               src="{{ item.image }}"
@@ -128,7 +127,7 @@
                         </td>
 
                         <td class="cart-item__details" role="cell" headers="CartDrawer-ColumnProduct">
-                          <a href="{{ cart_item_url }}" class="cart-item__name h4 break">
+                          <a class="cart-item__name h4 break">
                             {{- item.name | escape -}}
                           </a>
 
