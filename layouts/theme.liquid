@@ -15,7 +15,7 @@
     {% render 'meta-tags' %}
 
     {% comment %} <link rel="icon" type="image/png" href="https://98094a-4.myshopify.com/cdn/shop/files/Persona_5_logo.png?crop=center&height=32&v=1702729570&width=32"> {% endcomment %}
-    {% comment %} {{ content_for_header }} {% endcomment %}
+    {{ content_for_header }}
     {% comment %} {{ 'main.css' | asset_url | stylesheet_tag }} {% endcomment %}
     {% comment %} {{ 'https://unpkg.com/@youcan/js@latest/dist/index.umd.js' | script_tag }} {% endcomment %}
     <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
