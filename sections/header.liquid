@@ -245,7 +245,7 @@
             {%- if cart_item_count < 100 -%}
               <span aria-hidden="true">{{ cart_item_count }}</span>
             {%- endif -%}
-            <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart_item_count }}</span>
+            <span class="visually-hidden">{{ 'sections.header.cart_count.other' | t: count: cart_item_count }}</span>
           </div>
         {%- endif -%}
       </a>
@@ -362,42 +362,12 @@
 
     closeSearchModal() {
       this.searchModal = this.searchModal || this.header.querySelector('details-modal');
-      this.searchModal.close(false);
+      this.searchModal ? this.searchModal.close(false) : null;
     }
   }
 
   customElements.define('sticky-header', StickyHeader);
 {% endjavascript %}
-
-<script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "Organization",
-    "name": {{ store.name | json }},
-    {% if settings.logo %}
-      "logo": {{ settings.logo.src | json }},
-    {% endif %}
-    "sameAs": [],
-    "url": {{ request.url | json }}
-  }
-</script>
-
-{%- if template.name == 'index' -%}
-  {% assign potential_action_target = _absolute_store_domain | append: '/search' | append: "?q={search_term_string}" %}
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "WebSite",
-      "name": {{ store.name | json }},
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {{ potential_action_target | json }},
-        "query-input": "required name=search_term_string"
-      },
-      "url": {{ request.url | json }}
-    }
-  </script>
-{%- endif -%}
 
 {% schema %}
 {

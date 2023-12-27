@@ -2,11 +2,11 @@
 {{ '_cod_thankyou.css' | asset_url | stylesheet_tag }}
 
 {% style %}
-.title {
+.cod-title {
   color: {{ section.settings.title_color.hex }};
 }
 
-.subtitle {
+.cod-subtitle {
   color: {{ section.settings.subtitle_color.hex }};
 }
 
@@ -20,10 +20,13 @@
         {%- if section.settings.upload_thankyou_img.src -%}
           <img loading='lazy' class='image' src="{{ section.settings.upload_thankyou_img.src }}" alt='Upload thank you image'>
         {% else %}
-          <ion-icon name="checkmark-circle-outline" class="icon"></ion-icon>
+          <svg stroke="currentcolor" xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 512 512" style="">
+            <path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" stroke-miterlimit="10" class="ionicon-fill-none ionicon-stroke-width" style="fill: none;stroke-width: 32px;"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M352 176L217.6 336 160 272" class="ionicon-fill-none ionicon-stroke-width" style="fill: none;stroke-width: 32px;"></path>
+          </svg>
         {%- endif -%}
         <div class="heading">
-          <div class='title'>{{ section.settings.title }} <div class='subtitle'>{{ section.settings.subtitle }}</div></div>
+          <div class='cod-title'>{{ section.settings.title }} <div class='cod-subtitle'>{{ section.settings.subtitle }}</div></div>
         </div>
         <div class='description'>
           {{ section.settings.description }}
@@ -31,8 +34,8 @@
       </div>
     </div>
   </div>
-  <div class="cart-items">
-    <table>
+  <div class="cod-cart-items">
+    <table class="thankyoutable">
       <thead>
         <tr>
           <th>{{ 'thankyou.details.product' | t }}</th>
@@ -140,27 +143,32 @@
     {
       "type": "text",
       "id": "title",
-      "label": "Title"
+      "label": "Title",
+      "default": "Your order has been successfully recorded"
     },
     {
       "type": "color",
       "id": "title_color",
-      "label": "Title color"
+      "label": "Title color",
+      "default": "#8DC347"
     },
     {
       "type": "text",
       "id": "subtitle",
-      "label": "Subtitle"
+      "label": "Subtitle",
+      "default": "Thank you for choosing our store"
     },
     {
       "type": "color",
       "id": "subtitle_color",
-      "label": "Subtitle color"
+      "label": "Subtitle color",
+      "default": "#020202FF"
     },
     {
       "type": "richtext",
       "id": "description",
-      "label": "Description"
+      "label": "Description",
+      "default": "We are pleased with your choice of our store, and we hope that your experience with our products will be truly exceptional. We will send you a shipping confirmation as soon as your order is shipped."
     },
     {
       "type": "image_picker",
