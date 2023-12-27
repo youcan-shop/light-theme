@@ -38,7 +38,7 @@
 }
 
 .container .message ul li:hover {
-    color: var(--yc-primary)
+    color: rgb(var(--color-foreground))
 }
 
 .container .message ul li svg {

@@ -80,7 +80,7 @@
   font-size: 14px;
 }
 .yc-cart .cart-table .summary-box .total-price {
-  color: var(--yc-primary-color);
+  color: rgb(var(--color-foreground));
   font-weight: 700;
   font-size: 16px;
 }
@@ -89,7 +89,7 @@
   padding: 0px 18px 18px;
 }
 .yc-cart .cart-table .summary-box .item-total-price {
-  color: var(--yc-primary-color);
+  color: rgb(var(--color-foreground));
   font-weight: 700;
   font-size: 16px;
 }
@@ -218,7 +218,7 @@
   width: 86%;
 }
 .table-container .row .cell .total-price-wrapper span {
-  color: var(--yc-primary-color);
+  color: rgb(var(--color-foreground));
   font-weight: 700;
   font-size: 17px;
 }

@@ -212,7 +212,7 @@
   font-weight: 300;
   font-size: 12px;
   line-height: 120%;
-  color: var(--yc-neutral-color);
+  color: rgb(var(--color-foreground));
 }
 .yc-single-product .product-details .product-options .product-option .yc-upload-preview .yc-upload-wrapper .yc-image-preview .yc-image-info .image-size {
   color: #BABABA;
@@ -226,7 +226,7 @@
 .yc-single-product .product-details .product-options .product-option .yc-upload-preview .progress-bar {
   width: 0%;
   height: 100%;
-  background-color: var(--yc-primary-color);
+  background-color: rgb(var(--color-foreground));
   border-radius: 5px;
   transition: width 1s ease-in-out;
 }
@@ -276,7 +276,7 @@
   background: rgba(225, 225, 225, 0.3);
 }
 .yc-single-product .product-details .countdown-container .countdown-wrapper .countdown .sec .num {
-  background-color: var(--yc-primary-color);
+  background-color: rgb(var(--color-foreground));
 }
 .yc-single-product .product-price-container {
   display: flex;
@@ -288,7 +288,7 @@
   font-weight: 700;
   font-size: 25px;
   line-height: 120%;
-  color: var(--yc-primary-color);
+  color: rgb(var(--color-foreground));
 }
 .yc-single-product .compare-price {
   font-weight: 500;
