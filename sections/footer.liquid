@@ -200,64 +200,64 @@
 
 {% schema %}
 {
-  "label": "t:sections.footer.name",
+  "label": "Footer",
   "class": "youcan-section-group-footer-group",
   "blocks": [
     {
       "type": "link_list",
-      "label": "t:sections.footer.blocks.link_list.name",
+      "label": "Menu",
       "settings": [
         {
           "type": "richtext",
           "id": "heading",
           "default": "Quick links",
-          "label": "t:sections.footer.blocks.link_list.settings.heading.label"
+          "label": "Heading"
         },
         {
           "type": "checkbox",
           "id": "menu",
           "default": true,
-          "label": "t:sections.footer.blocks.link_list.settings.menu.label",
-          "info": "t:sections.footer.blocks.link_list.settings.menu.info"
+          "label": "Menu",
+          "info": "Displays only top-level menu items."
         }
       ]
     },
     {
       "type": "brand_information",
-      "label": "t:sections.footer.blocks.brand_information.name",
+      "label": "Brand information",
       "settings": [
         {
           "type": "paragraph",
-          "content": "t:sections.footer.blocks.brand_information.settings.paragraph.content"
+          "content": "This block will display your brand information. [Edit brand information.](/editor?context=theme&category=brand%20information)"
         },
         {
           "type": "header",
-          "content": "t:sections.footer.blocks.brand_information.settings.header__1.content"
+          "content": "Social media icons"
         },
         {
           "type": "checkbox",
           "id": "show_social",
           "default": true,
-          "label": "t:sections.footer.blocks.brand_information.settings.show_social.label",
-          "info": "t:sections.footer.blocks.brand_information.settings.show_social.info"
+          "label": "Show social media icons",
+          "info": "To display your social media accounts, link them in your [theme settings](/editor?context=theme&category=social%20media)."
         }
       ]
     },
     {
       "type": "text",
-      "label": "t:sections.footer.blocks.text.name",
+      "label": "Text",
       "settings": [
         {
           "type": "richtext",
           "id": "heading",
           "default": "Heading",
-          "label": "t:sections.footer.blocks.text.settings.heading.label"
+          "label": "Heading"
         },
         {
           "type": "richtext",
           "id": "subtext",
           "default": "<p>Share contact information, store details, and brand content with your customers.</p>",
-          "label": "t:sections.footer.blocks.text.settings.subtext.label"
+          "label": "Subtext"
         }
       ]
     },
@@ -306,59 +306,59 @@
   "settings": [
     {
       "type": "header",
-      "content": "t:sections.footer.settings.header__1.content",
-      "info": "t:sections.footer.settings.header__1.info"
+      "content": "Email Signup",
+      "info": "Subscribers added automatically to your “accepted marketing” customer list. [Learn more](https://help.shopify.com/manual/customers/manage-customers)"
     },
     {
       "type": "header",
-      "content": "t:sections.footer.settings.header__9.content",
-      "info": "t:sections.footer.settings.header__9.info"
+      "content": "Follow on Shop",
+      "info": "To allow customers to follow your store on the Shop app from your storefront, Shop Pay must be enabled. [Learn more](https://help.shopify.com/manual/online-store/themes/customizing-themes/follow-on-shop)"
     },
     {
       "type": "header",
-      "content": "t:sections.footer.settings.header__2.content",
-      "info": "t:sections.footer.settings.header__2.info"
+      "content": "Social media icons",
+      "info": "To display your social media accounts, link them in your [theme settings](/editor?context=theme&category=social%20media)."
     },
     {
       "type": "checkbox",
       "id": "show_social",
       "default": true,
-      "label": "t:sections.footer.settings.show_social.label"
+      "label": "Show social media icons"
     },
     {
       "type": "header",
-      "content": "t:sections.footer.settings.header__3.content",
-      "info": "t:sections.footer.settings.header__4.info"
+      "content": "Country/region selector",
+      "info": "To add a country/region, go to your [market settings.](/admin/settings/markets)"
     },
     {
       "type": "header",
-      "content": "t:sections.footer.settings.header__5.content",
-      "info": "t:sections.footer.settings.header__6.info"
+      "content": "Language selector",
+      "info": "To add a language, go to your [language settings.](/admin/settings/languages)"
     },
     {
       "type": "checkbox",
       "id": "enable_language_selector",
       "default": true,
-      "label": "t:sections.footer.settings.enable_language_selector.label"
+      "label": "Enable language selector"
     },
     {
       "type": "header",
-      "content": "t:sections.footer.settings.header__7.content"
+      "content": "Payment methods"
     },
     {
       "type": "checkbox",
       "id": "payment_enable",
       "default": true,
-      "label": "t:sections.footer.settings.payment_enable.label"
+      "label": "Show payment icons"
     },
     {
       "type": "header",
-      "content": "t:sections.footer.settings.header__8.content",
-      "info": "t:sections.footer.settings.header__8.info"
+      "content": "Policy links",
+      "info": "To add store policies, go to your [policy settings](/admin/settings/legal)."
     },
     {
       "type": "header",
-      "content": "t:sections.all.spacing"
+      "content": "Spacing"
     },
     {
       "type": "range",
@@ -367,12 +367,12 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "t:sections.footer.settings.margin_top.label",
+      "label": "Top margin",
       "default": 0
     },
     {
       "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
+      "content": "Section padding"
     },
     {
       "type": "range",
@@ -381,7 +381,7 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
+      "label": "Top padding",
       "default": 36
     },
     {
@@ -391,7 +391,7 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
+      "label": "Bottom padding",
       "default": 36
     }
   ]

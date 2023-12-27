@@ -139,7 +139,7 @@
 
 {% schema %}
 {
-  "label": "t:sections.announcement-bar.name",
+  "label": "Announcement bar",
   "max_blocks": 12,
   "class": "announcement-bar-section",
   "settings": [
@@ -147,27 +147,27 @@
       "type": "checkbox",
       "id": "show_line_separator",
       "default": true,
-      "label": "t:sections.header.settings.show_line_separator.label"
+      "label": "Show separator line"
     },
     {
       "type": "header",
-      "content": "t:sections.announcement-bar.settings.header__1.content",
-      "info": "t:sections.announcement-bar.settings.header__1.info"
+      "content": "Social media icons",
+      "info": "To display your social media accounts, link them in your [theme settings](/editor?context=theme&category=social%20media)."
     },
     {
       "type": "checkbox",
       "id": "show_social",
       "default": false,
-      "label": "t:sections.announcement-bar.settings.show_social.label"
+      "label": "Show icons on desktop"
     },
     {
       "type": "header",
-      "content": "t:sections.announcement-bar.settings.header__2.content"
+      "content": "Announcements"
     },
     {
       "type": "checkbox",
       "id": "auto_rotate",
-      "label": "t:sections.announcement-bar.settings.auto_rotate.label",
+      "label": "Auto-rotate announcements",
       "default": false
     },
     {
@@ -177,47 +177,47 @@
       "max": 10,
       "step": 1,
       "unit": "s",
-      "label": "t:sections.announcement-bar.settings.change_slides_speed.label",
+      "label": "Change every",
       "default": 5
     },
     {
       "type": "header",
-      "content": "t:sections.announcement-bar.settings.header__3.content",
-      "info": "t:sections.announcement-bar.settings.header__3.info"
+      "content": "Country/region selector",
+      "info": "To add a country/region, go to your [market settings.](/admin/settings/markets)"
     },
     {
       "type": "checkbox",
       "id": "enable_country_selector",
       "default": false,
-      "label": "t:sections.announcement-bar.settings.enable_country_selector.label"
+      "label": "Enable country/region selector"
     },
     {
       "type": "header",
-      "content": "t:sections.announcement-bar.settings.header__4.content",
-      "info": "t:sections.announcement-bar.settings.header__4.info"
+      "content": "Language selector",
+      "info": "To add a language, go to your [language settings.](/admin/settings/languages)"
     },
     {
       "type": "checkbox",
       "id": "enable_language_selector",
       "default": false,
-      "label": "t:sections.announcement-bar.settings.enable_language_selector.label"
+      "label": "Enable language selector"
     }
   ],
   "blocks": [
     {
       "type": "announcement",
-      "label": "t:sections.announcement-bar.blocks.announcement.name",
+      "label": "Announcement",
       "settings": [
         {
           "type": "text",
           "id": "text",
           "default": "Welcome to our store",
-          "label": "t:sections.announcement-bar.blocks.announcement.settings.text.label"
+          "label": "Text"
         },
         {
           "type": "url",
           "id": "link",
-          "label": "t:sections.announcement-bar.blocks.announcement.settings.link.label"
+          "label": "Link"
         }
       ]
     }

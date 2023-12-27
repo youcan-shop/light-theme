@@ -371,7 +371,7 @@
 
 {% schema %}
 {
-  "label": "t:sections.header.name",
+  "label": "Header",
   "class": "youcan-section-group-header-group section-header",
   "tag": "div",
   "max_blocks": 3,
@@ -382,30 +382,30 @@
       "options": [
         {
           "value": "top-left",
-          "label": "t:sections.header.settings.logo_position.options__2.label"
+          "label": "Top left"
         },
         {
           "value": "top-center",
-          "label": "t:sections.header.settings.logo_position.options__3.label"
+          "label": "Top center"
         },
         {
           "value": "middle-left",
-          "label": "t:sections.header.settings.logo_position.options__1.label"
+          "label": "Middle left"
         },
         {
           "value": "middle-center",
-          "label": "t:sections.header.settings.logo_position.options__4.label"
+          "label": "Middle center"
         }
       ],
       "default": "middle-left",
-      "label": "t:sections.header.settings.logo_position.label",
-      "info": "t:sections.header.settings.logo_help.content"
+      "label": "Desktop logo position",
+      "info": "Edit your logo in [theme settings](/editor?context=theme&category=logo)."
     },
     {
       "type": "checkbox",
       "id": "menu",
       "default": true,
-      "label": "t:sections.header.settings.menu.label"
+      "label": "Menu"
     },
     {
       "type": "select",
@@ -413,20 +413,20 @@
       "options": [
         {
           "value": "dropdown",
-          "label": "t:sections.header.settings.menu_type_desktop.options__1.label"
+          "label": "Dropdown"
         },
         {
           "value": "mega",
-          "label": "t:sections.header.settings.menu_type_desktop.options__2.label"
+          "label": "Mega menu"
         },
         {
           "value": "drawer",
-          "label": "t:sections.header.settings.menu_type_desktop.options__3.label"
+          "label": "Drawer"
         }
       ],
       "default": "dropdown",
-      "label": "t:sections.header.settings.menu_type_desktop.label",
-      "info": "t:sections.header.settings.menu_type_desktop.info"
+      "label": "Desktop menu type",
+      "info": "Menu type is automatically optimized for mobile."
     },
     {
       "type": "select",
@@ -434,53 +434,53 @@
       "options": [
         {
           "value": "none",
-          "label": "t:sections.header.settings.sticky_header_type.options__1.label"
+          "label": "None"
         },
         {
           "value": "on-scroll-up",
-          "label": "t:sections.header.settings.sticky_header_type.options__2.label"
+          "label": "On scroll up"
         },
         {
           "value": "always",
-          "label": "t:sections.header.settings.sticky_header_type.options__3.label"
+          "label": "Always"
         },
         {
           "value": "reduce-logo-size",
-          "label": "t:sections.header.settings.sticky_header_type.options__4.label"
+          "label": "Always, reduce logo size"
         }
       ],
       "default": "on-scroll-up",
-      "label": "t:sections.header.settings.sticky_header_type.label"
+      "label": "Sticky header"
     },
     {
       "type": "checkbox",
       "id": "show_line_separator",
       "default": true,
-      "label": "t:sections.header.settings.show_line_separator.label"
+      "label": "Show separator line"
     },
     {
       "type": "header",
-      "content": "t:sections.header.settings.header__1.content"
+      "content": "Color"
     },
     {
       "type": "header",
-      "content": "t:sections.header.settings.header__3.content",
-      "info": "t:sections.header.settings.header__4.info"
+      "content": "Country/region selector",
+      "info": "To add a country/region, go to your [market settings.](/admin/settings/markets)"
     },
     {
       "type": "header",
-      "content": "t:sections.header.settings.header__5.content",
-      "info": "t:sections.header.settings.header__6.info"
+      "content": "Language selector",
+      "info": "To add a language, go to your [language settings.](/admin/settings/languages)"
     },
     {
       "type": "checkbox",
       "id": "enable_language_selector",
       "default": true,
-      "label": "t:sections.header.settings.enable_language_selector.label"
+      "label": "Enable language selector"
     },
     {
       "type": "header",
-      "content": "t:sections.header.settings.mobile_layout.content"
+      "content": "Mobile layout"
     },
     {
       "type": "select",
@@ -488,19 +488,19 @@
       "options": [
         {
           "value": "center",
-          "label": "t:sections.header.settings.mobile_logo_position.options__1.label"
+          "label": "Center"
         },
         {
           "value": "left",
-          "label": "t:sections.header.settings.mobile_logo_position.options__2.label"
+          "label": "Left"
         }
       ],
       "default": "center",
-      "label": "t:sections.header.settings.mobile_logo_position.label"
+      "label": "Mobile logo position"
     },
     {
       "type": "header",
-      "content": "t:sections.all.spacing"
+      "content": "Spacing"
     },
     {
       "type": "range",
@@ -509,12 +509,12 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "t:sections.header.settings.margin_bottom.label",
+      "label": "Bottom margin",
       "default": 0
     },
     {
       "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
+      "content": "Section padding"
     },
     {
       "type": "range",
@@ -523,7 +523,7 @@
       "max": 36,
       "step": 4,
       "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
+      "label": "Top padding",
       "default": 20
     },
     {
@@ -533,7 +533,7 @@
       "max": 36,
       "step": 4,
       "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
+      "label": "Bottom padding",
       "default": 20
     }
   ]
